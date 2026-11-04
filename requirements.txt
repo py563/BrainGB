@@ -1,7 +1,7 @@
-numpy~=1.21.2
-pandas~=1.2.3
-scikit-learn~=1.0.2
-networkx~=2.6.2
-node2vec~=0.4.4
-scipy~=1.7.3
-nni~=2.4
+numpy>=1.23.5,<2.0.0
+pandas>=1.5.0
+scikit-learn>=1.2.0
+networkx>=2.8
+node2vec>=0.4.4
+scipy>=1.9.3
+nni>=2.10
