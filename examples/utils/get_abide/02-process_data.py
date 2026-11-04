@@ -19,6 +19,7 @@ import argparse
 import pandas as pd
 import numpy as np
 from preprocess_data import Reader
+np.object = object  # Fix deepdish compatibility with NumPy 1.24+
 import deepdish as dd
 import warnings
 import os
@@ -53,7 +54,7 @@ def main(args):
     # Algorithm choice
     params['atlas'] = args.atlas  # Atlas for network construction
     atlas = args.atlas  # Atlas for network construction (node definition)
-    
+
     reader = Reader(args.root_path, args.id_file_path)
     # Get subject IDs and class labels
     subject_IDs = reader.get_ids()
@@ -74,7 +75,7 @@ def main(args):
         y_data[i, int(labels[subject_IDs[i]]) - 1] = 1
         y[i] = int(labels[subject_IDs[i]])
 
-    
+
 
     # Compute feature vectors (vectorised connectivity networks)
     fea_corr = reader.get_networks(subject_IDs, iter_no='', kind='correlation', atlas_name=atlas) #(1035, 200, 200)
