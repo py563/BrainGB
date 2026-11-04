@@ -5,3 +5,5 @@ networkx>=2.8
 node2vec>=0.4.4
 scipy>=1.9.3
 nni>=2.10
+# for dataset fecthingee
+nilearn>=0.10.0
